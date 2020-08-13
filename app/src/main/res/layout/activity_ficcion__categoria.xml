@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
+    android:orientation="vertical"
+    tools:context=".Ficcion_Categoria">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Ficción"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Buscar"
+        android:inputType="textPersonName" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/harry"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="304dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/harry_potter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/textViewHarry1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saga: Harry Potter"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewHarry2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título: La Orden del Fenix"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewHarry3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Autor: J.K. Rowling"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewHarry4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Año de publicación: 2003"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/percy"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="304dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/percy_jackson" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/textViewPercy1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saga: Percy Jackson"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewPercy2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título: El Ladron del Rayo"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewPercy3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Autor: Rick Riordan"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewPercy4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Año de publicación: 2005"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sinsajo"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewSinsajo"
+                    android:layout_width="304dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/juegos_del_hambre" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/textViewSinsajo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saga: Los Juegos del Hambre"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewSinsajo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título: Sinsajo"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewSinsajo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Autor: Suzanne Collins"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewSinsajo4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Año de publicación: 2010"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ender"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewEnder"
+                    android:layout_width="304dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/juego_de_ender" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/textViewEnder1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saga: El Juego de Ender"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewEnder2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título: Los Juegos de Ender"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewEnder3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Autor: Orson Scott Card"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewEnder4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Año de publicación: 1985"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="11dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/boton_categoria" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/boton_home" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/perfildeusuario" />
+    </LinearLayout>
+</LinearLayout>

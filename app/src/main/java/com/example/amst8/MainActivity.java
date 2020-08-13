@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void categoria(View view){
-
+    public void categoria(View view) {
         Intent i = new Intent(this, Ficcion_Categoria.class );
         //i.putExtra("INFO", consulta.getText().toString());
         //i.putExtra("direccion", et1.getText().toString());

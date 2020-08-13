@@ -10,8 +10,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
+        android:drawablePadding="8dp"
+        android:gravity="center"
         android:text="@string/iniciar_sesion"
+        app:drawableStartCompat="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,14 +41,14 @@
         android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -63,11 +66,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="@string/ingresar"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_style"
         android:onClick="categoria"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/ingresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

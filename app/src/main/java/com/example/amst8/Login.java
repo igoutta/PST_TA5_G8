@@ -8,33 +8,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.amst8.USUARIO";
     private EditText usn, pw;
     private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         usn = findViewById(R.id.editTextName);
         pw = findViewById(R.id.editTextPassword);
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "bookstore", null, 1);
+
+        this.deleteDatabase("bookstore");
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bookstore", null, 1);
         db = admin.getReadableDatabase();
     }
 
-    public void categorias(View view) {
-
-        Intent i = new Intent(this, Categorias.class);
-        startActivity(i);
-        finish();
-    }
-
-     public void categoriaFiccion(View view) {
-        if (dbHasData(usn.getText().toString(), pw.getText().toString())) {
-            Intent i = new Intent(this, Ficcion_Categoria.class);
-            //i.putExtra("INFO", consulta.getText().toString());
-            //i.putExtra("direccion", et1.getText().toString());
+    public void ingresar(View view) {
+        String u = usn.getText().toString().trim();
+        String p = pw.getText().toString().trim();
+        if (dbHasData(u, p)) {
+            db.close();
+            Intent i = new Intent(this, Main.class);
+            i.putExtra(EXTRA_MESSAGE, u);
             startActivity(i);
             finish();
         }

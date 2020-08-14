@@ -72,7 +72,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "'vuelta_mundo_image', 3)");
         db.execSQL("insert into libro values ('0012', 'Moby-Dick', 'Herman Melville','1851'," +
                 "'Moby Dick es una de las más famosas novelas de aventura. La novela describe el recorrido del barco ballenero Pequod y se completa con largos pasajes sobre las ballenas y la caza de las ballenas.'," +
-                "'traje_muerto_image', 3)");
+                "'moby_dick_image', 3)");
 
         db.execSQL("insert into libro values ('0013', 'Deadpool Kills the Marvel Universe', 'Cullen Bunn','2012'," +
                 "'¿Qué tal si todo los que pensaste que era divertido sobre Deadpool… fuera en realidad simplemente perturbador? ¿Qué tal si decidiera matar a todos los que forman el Universo Marvel? Deadpool.'," +

@@ -14,10 +14,21 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table userdata(codigo varchar(3) primary key, username text, password text)");
-        db.execSQL("insert into userdata(codigo, username, password) values ('001', 'admin', 'admin')");
+        db.execSQL("create table categoria(id int primary key autoincrement, descripcion text)");
+        db.execSQL("insert into categoria(id, descripcion) values (1, 'Ficción')");
 
-        db.execSQL("create table libros(id varchar(3) primary key, descripcion text)");
+        db.execSQL("create table userdata(codigo varchar(3) not null primary key, username text unique not null, password text not null," +
+                "name text not null, apellidos text not null, correo text not null," +
+                "celular varchar(10), foreign key (favcategoria) references categoria(id))");
+        db.execSQL("insert into userdata values ('001', 'admin', 'admin', 'Guillermo', 'Castillo'," +
+                "'guancas@gmail.com','0999981247', 1)");
+
+        db.execSQL("create table libro(isbn varchar(4) unique not null primary key, " +
+                "titulo text not null, autor text not null, publicacion varchar(4), " +
+                "descripcion text not null, imgsrc text not null, foreign key (favcategoria) references categoria(id))");
+        db.execSQL("insert into libro values ('0001', 'Los Juegos de Ender', 'Orson Scott Card','1985'," +
+                "'Aqui va la descripcion'," +
+                "'juego_de_ender.jpg', 1)");
     }
 
     @Override

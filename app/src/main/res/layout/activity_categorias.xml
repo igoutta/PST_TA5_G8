@@ -100,7 +100,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/CatNOSE"
+                    android:id="@+id/CatAventura"
                     android:layout_width="172dp"
                     android:layout_height="215dp"
                     android:layout_weight="1"
@@ -124,7 +124,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/CatNOSEX2"
+                    android:id="@+id/CatComics"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

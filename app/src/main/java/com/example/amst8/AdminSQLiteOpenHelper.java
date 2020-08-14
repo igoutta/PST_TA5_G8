@@ -50,7 +50,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "idcategoria integer not null, foreign key (idcategoria) references categoria(id))");*/
         db.execSQL("insert into libro values ('0005', 'IT', 'Stephen King','1986'," +
                 "'Cuenta la historia de un grupo de siete niños que son aterrorizados por un malvado monstruo -al que llaman «Eso»- que es capaz de cambiar de forma, alimentándose del terror que produce en sus víctimas.'," +
-                "'_image', 2)");
+                "'it_image', 2)");
         db.execSQL("insert into libro values ('0006', 'Dracula', 'Bram Stoker','1897'," +
                 "'Cuando Jonathan Harker viajó a Transilvania por asuntos de negocios, nunca imaginó el peligro que corría. Su cliente, el magnético conde Drácula, lo mantiene prisionero y Harker adivina sus oscuros propósitos.'," +
                 "'dracula_image', 2)");
@@ -60,6 +60,32 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("insert into libro values ('0008', 'El traje del muerto', 'Joe Hill','2007'," +
                 "'Jude Coyne es una estrella de rock, al estilo de Marilyn Manson, ya retirada. Rizando el rizo, decide pujar por un fantasma que se subasta por Internet y, días después, recibe una extraña caja en forma de corazón que contiene el traje del muerto.Jude Coyne es una estrella de rock, al estilo de Marilyn Manson, ya retirada. Rizando el rizo, decide pujar por un fantasma que se subasta por Internet y, días después, recibe una extraña caja en forma de corazón que contiene el traje del muerto.'," +
                 "'traje_muerto_image', 2)");
+
+        db.execSQL("insert into libro values ('0009', 'Los colonos de Silverado', 'Robert Louis Stevenson','1883'," +
+                "'Los colonos de Silverado describe las andanzas y peripecias acaecidas durante la nada convencional «luna de miel» de Stevenson y su mujer, Fanny Osbourne, por las montañas de California, donde se alojaron en una mina de plata abandonada.'," +
+                "'colones_image', 3)");
+        db.execSQL("insert into libro values ('0010', 'El horizonte azul', 'Wilbur Smith','2003'," +
+                "'Jim Courtney, es un joven lleno de energía y con ansias de aventura. De manera inesperada, se cruza con Louisa, una hermosa prisionera encerrada en un barco holandés. Decidido a salvarla, la rescata y huye con ella en una fascinante odisea a través de la selva virgen, a una región de tribus guerreras y animales feroces.'," +
+                "'horizonte_azul_image', 3)");
+        db.execSQL("insert into libro values ('0011', 'La vuelta al mundo en ochenta días', 'Julio Verne','1872'," +
+                "'Phileas Fogg, un verdadero gentleman, miembro del Reform Club, arriesga toda su fortuna en una apuesta. Se compromete a dar la vuelta al mundo en ochenta días, basándose en un cálculo hecho por el periódico Morning Chronicle.'," +
+                "'vuelta_mundo_image', 3)");
+        db.execSQL("insert into libro values ('0012', 'Moby-Dick', 'Herman Melville','1851'," +
+                "'Moby Dick es una de las más famosas novelas de aventura. La novela describe el recorrido del barco ballenero Pequod y se completa con largos pasajes sobre las ballenas y la caza de las ballenas.'," +
+                "'traje_muerto_image', 3)");
+
+        db.execSQL("insert into libro values ('0013', 'Deadpool Kills the Marvel Universe', 'Cullen Bunn','2012'," +
+                "'¿Qué tal si todo los que pensaste que era divertido sobre Deadpool… fuera en realidad simplemente perturbador? ¿Qué tal si decidiera matar a todos los que forman el Universo Marvel? Deadpool.'," +
+                "'deadpool_image', 4)");
+        db.execSQL("insert into libro values ('0014', 'Avengers vs. X-Men', 'Brian Michael Bendis','2012'," +
+                "'Phoenix, una energía cósmica que representa la muerte y la resurrección, viene de camino a la Tierra. Los X-Men creen que la llegada de Phoenix significa el resurgimiento de los mutantes cuya población se encuentra diezmada. Del otro lado, los Avengers ven en Phoenix una amenaza para el mundo, por lo que buscan custodiar a la chica.'," +
+                "'mvsx_image', 4)");
+        db.execSQL("insert into libro values ('0015', 'The Death of Superman', 'Louise Simonson','1992'," +
+                "'Solo Superman, el ser más poderoso de la tierra, es capaz de hacerle frente a Doomsday, provocando una batalla catastrófica, en la cual, la única manera en que termine es que alguno de los dos muera.'," +
+                "'superman_image', 4)");
+        db.execSQL("insert into libro values ('0016', 'Flashpoint', 'Geoff Johns','2011'," +
+                "'Flash hace una onda temporal que crea una realidad donde la Liga de la Justicia nunca se había formado. Superman no existe y una guerra se desarrolla entre la Mujer Maravilla y Aquaman. Flash forma un equipo con Batman y Cyborg para solucionarlo.'," +
+                "'flashp_image', 4)");
     }
 
     @Override

@@ -50,16 +50,16 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "idcategoria integer not null, foreign key (idcategoria) references categoria(id))");
         db.execSQL("insert into libro values ('0005', 'IT', 'Stephen King','1986'," +
                 "'Cuenta la historia de un grupo de siete niños que son aterrorizados por un malvado monstruo -al que llaman «Eso»- que es capaz de cambiar de forma, alimentándose del terror que produce en sus víctimas.'," +
-                "'IT_image', 1)");
+                "'it_image', 1)");
         db.execSQL("insert into libro values ('0006', 'Dracula', 'Bram Stoker','1897'," +
                 "'Cuando Jonathan Harker viajó a Transilvania por asuntos de negocios, nunca imaginó el peligro que corría. Su cliente, el magnético conde Drácula, lo mantiene prisionero y Harker adivina sus oscuros propósitos.'," +
-                "'Dracula_image', 1)");
+                "'dracula_image', 1)");
         db.execSQL("insert into libro values ('0007', 'El gato negro', 'Edgar Allan Poe','1843'," +
                 "'Un joven matrimonio lleva una vida hogareña apacible en compañía de varios animales domésticos, entre ellos un misterioso gato negro. Todo cambia cuando el marido empieza a dejarse arrastrar por la bebida, y en uno de sus accesos de furia acaba con la vida del animal.'," +
-                "'GatoNegro_image', 1)");
+                "'gato_negro_image', 1)");
         db.execSQL("insert into libro values ('0008', 'El traje del muerto', 'Joe Hill','2007'," +
                 "'Jude Coyne es una estrella de rock, al estilo de Marilyn Manson, ya retirada. Rizando el rizo, decide pujar por un fantasma que se subasta por Internet y, días después, recibe una extraña caja en forma de corazón que contiene el traje del muerto.Jude Coyne es una estrella de rock, al estilo de Marilyn Manson, ya retirada. Rizando el rizo, decide pujar por un fantasma que se subasta por Internet y, días después, recibe una extraña caja en forma de corazón que contiene el traje del muerto.'," +
-                "'TrajeMuerto_image', 1)");
+                "'traje_muerto_image', 1)");
     }
 
     @Override

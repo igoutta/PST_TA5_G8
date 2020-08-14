@@ -50,7 +50,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "idcategoria integer not null, foreign key (idcategoria) references categoria(id))");
         db.execSQL("insert into libro values ('0005', 'IT', 'Stephen King','1986'," +
                 "'Cuenta la historia de un grupo de siete niños que son aterrorizados por un malvado monstruo -al que llaman «Eso»- que es capaz de cambiar de forma, alimentándose del terror que produce en sus víctimas.'," +
-                "'_image', 1)");
+                "'it_image', 1)");
         db.execSQL("insert into libro values ('0006', 'Dracula', 'Bram Stoker','1897'," +
                 "'Cuando Jonathan Harker viajó a Transilvania por asuntos de negocios, nunca imaginó el peligro que corría. Su cliente, el magnético conde Drácula, lo mantiene prisionero y Harker adivina sus oscuros propósitos.'," +
                 "'dracula_image', 1)");

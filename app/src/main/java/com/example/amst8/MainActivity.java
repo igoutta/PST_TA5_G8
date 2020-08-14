@@ -24,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void categorias(View view) {
+
         Intent i = new Intent(this, Categorias.class);
         startActivity(i);
         finish();
     }
 
-    public void categoriaFiccion(View view) {
+     public void categoriaFiccion(View view) {
         if (dbHasData(usn.getText().toString(), pw.getText().toString())) {
             Intent i = new Intent(this, Ficcion_Categoria.class);
             //i.putExtra("INFO", consulta.getText().toString());

@@ -4,6 +4,6 @@
         android:drawable="@mipmap/book_icon"
         android:width="@dimen/icon_size"
         android:height="@dimen/icon_size"
-        />
+        android:gravity="center"/>
 
 </layer-list>

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //i.putExtra("INFO", consulta.getText().toString());
         //i.putExtra("direccion", et1.getText().toString());
         startActivity(i);
+        finish();
     }
 
 }

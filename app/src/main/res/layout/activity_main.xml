@@ -54,18 +54,19 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:id="@+id/ibProfile"
+                android:id="@+id/ibCat"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:onClick="verPerfil"
-                app:srcCompat="@mipmap/perfildeusuario" />
+                app:srcCompat="@mipmap/perfil" />
 
             <ImageButton
                 android:id="@+id/ibHome"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="inicio"
                 app:srcCompat="@mipmap/boton_home" />
 
             <ImageButton
@@ -73,6 +74,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:onClick="verCategorias"
                 app:srcCompat="@mipmap/boton_categoria" />
 
         </LinearLayout>

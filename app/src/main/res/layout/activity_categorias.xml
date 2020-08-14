@@ -47,20 +47,23 @@
                 <ImageButton
                     android:id="@+id/CatFiccion"
                     android:layout_width="152dp"
-                    android:layout_height="429dp"
+                    android:layout_height="219dp"
                     android:layout_weight="1"
                     android:scaleType="centerCrop"
                     android:visibility="visible"
                     app:srcCompat="@mipmap/ficcion" />
 
-                <TextView
-                    android:id="@+id/textViewCatFiccion"
+                <Button
+                    android:id="@+id/button4"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Ficcion"
                     android:textAlignment="center"
-                    android:textColor="#E91E63"
-                    android:textSize="24sp" />
+                    android:textColor="#03A9F4"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -71,21 +74,24 @@
                 <ImageButton
                     android:id="@+id/CatTerror"
                     android:layout_width="172dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="219dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="false"
                     android:cropToPadding="false"
                     android:scaleType="centerCrop"
                     app:srcCompat="@mipmap/terror" />
 
-                <TextView
-                    android:id="@+id/textViewCatTerror"
+                <Button
+                    android:id="@+id/button5"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Terror"
                     android:textAlignment="center"
-                    android:textColor="#E91E63"
-                    android:textSize="24sp" />
+                    android:textColor="#03A9F4"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -95,19 +101,21 @@
 
                 <ImageButton
                     android:id="@+id/CatNOSE"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="172dp"
+                    android:layout_height="215dp"
                     android:layout_weight="1"
-                    app:srcCompat="@mipmap/boton_categoria" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@mipmap/aventura" />
 
-                <TextView
-                    android:id="@+id/textViewCatX"
+                <Button
+                    android:id="@+id/button6"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="X"
-                    android:textAlignment="center"
-                    android:textColor="#E91E63"
-                    android:textSize="24sp" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Aventura"
+                    android:textColor="#03A9F4"
+                    android:textSize="18sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -120,16 +128,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@mipmap/boton_categoria" />
+                    app:srcCompat="@mipmap/comics" />
 
-                <TextView
-                    android:id="@+id/textViewCatX2"
+                <Button
+                    android:id="@+id/button7"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="X2"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:text="Comics"
                     android:textAlignment="center"
-                    android:textColor="#E91E63"
-                    android:textSize="24sp" />
+                    android:textColor="#03A9F4"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
             </LinearLayout>
 
 
@@ -140,7 +151,7 @@
     <LinearLayout
         android:id="@+id/ESPACIO1"
         android:layout_width="match_parent"
-        android:layout_height="249dp"
+        android:layout_height="184dp"
         android:orientation="horizontal" />
 
     <LinearLayout
@@ -150,28 +161,30 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="79dp"
-            android:layout_height="match_parent"
+            android:id="@+id/ibProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
-            app:srcCompat="@mipmap/boton_categoria" />
+            android:scaleType="center"
+            app:srcCompat="@mipmap/perfil" />
 
         <ImageButton
             android:id="@+id/ibHome"
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
+            android:onClick="inicio"
+            android:scaleType="center"
             app:srcCompat="@mipmap/boton_home" />
 
         <ImageButton
-            android:id="@+id/ibProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:id="@+id/ibCat"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
-            app:srcCompat="@mipmap/perfildeusuario" />
+            android:onClick="categoria"
+            android:scaleType="center"
+            app:srcCompat="@mipmap/boton_categoria" />
 
     </LinearLayout>
 

@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -106,4 +107,14 @@ public class Main extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void verCategorias(View view) {
+        Intent i = new Intent(this, Categorias.class );
+        startActivity(i);
+    }
+
+    public void inicio(View view) {
+        Intent i = new Intent(this, Login.class );
+        startActivity(i);
+        finish();
+    }
 }

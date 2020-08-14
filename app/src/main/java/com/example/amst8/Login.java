@@ -26,6 +26,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void ingresar(View view) {
+        //arreglo
         String u = usn.getText().toString().trim();
         String p = pw.getText().toString().trim();
         if (dbHasData(u, p)) {

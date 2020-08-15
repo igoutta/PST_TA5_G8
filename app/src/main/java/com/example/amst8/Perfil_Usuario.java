@@ -19,6 +19,7 @@ public class Perfil_Usuario extends AppCompatActivity {
                 "bookstore", null, 1);
         SQLiteDatabase db = admin.getReadableDatabase();
 
+
         tvname= findViewById(R.id.tvname1);
         tvapellido= findViewById(R.id.tvapellido1);
         tvcorreo= findViewById(R.id.tvcorreo1);

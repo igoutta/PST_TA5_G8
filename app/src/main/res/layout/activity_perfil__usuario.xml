@@ -21,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:srcCompat="@mipmap/contactlogo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -41,15 +41,16 @@
                 <TextView
                     android:id="@+id/tvname"
                     android:layout_width="25dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Nombres:"
                     android:textAlignment="center"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvname1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center"
@@ -68,11 +69,12 @@
                     android:layout_weight="1"
                     android:text="Apellidos:"
                     android:textAlignment="center"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvapellido1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center"
@@ -81,7 +83,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="62dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -91,12 +93,13 @@
                     android:layout_weight="1"
                     android:text="Correo:"
                     android:textAlignment="center"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvcorreo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="center"
                     android:textSize="24sp" />
@@ -114,11 +117,12 @@
                     android:layout_weight="1"
                     android:text="Celular:"
                     android:textAlignment="center"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvcelular1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center"
@@ -137,11 +141,12 @@
                     android:layout_weight="1"
                     android:text="Favorito:"
                     android:textAlignment="center"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvfavorito1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="center"

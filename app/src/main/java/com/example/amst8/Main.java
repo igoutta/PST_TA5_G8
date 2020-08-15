@@ -1,15 +1,22 @@
 package com.example.amst8;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,6 +42,7 @@ public class Main extends AppCompatActivity {
         if(cond.hasExtra(Categorias.EXTRA_MESSAGE)) {
             select_query.concat(" where idcategoria = ").concat(cond.getStringExtra(Categorias.EXTRA_MESSAGE));
         }
+        buscar(et);
         crearLista(select_query);
     }
 
@@ -55,9 +63,9 @@ public class Main extends AppCompatActivity {
                         ImageView toShow = new ImageView(getApplicationContext());
                         String src = fila.getString(5);
                         toShow.setImageResource(getResources().getIdentifier(src,"mipmap",getPackageName()));
-                        toShow.setMinimumWidth(168);
                         toShow.setMinimumHeight(168);
-                        toShow.setPaddingRelative(8,8,8,8);
+                        toShow.setMaxHeight(168);
+                        toShow.setPadding(8,8,8,8);
                         row.addView(toShow);
 
                         LinearLayout list = new LinearLayout(getApplicationContext());
@@ -76,6 +84,28 @@ public class Main extends AppCompatActivity {
                             list.addView(l);
                         }
 
+                        final String desc = fila.getString(4);
+                        row.post(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                row.setOnClickListener(new View.OnClickListener() {
+
+                                    @Override
+                                    public void onClick(final View v) {
+                                        View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_desc, null);
+                                        AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext(),R.style.Theme_AppCompat_NoActionBar).create();
+                                        alertDialog.setView(dialogView);
+
+                                        TextView text = dialogView.findViewById(R.id.text_dialog);
+                                        text.setText(desc);
+
+                                        alertDialog.show();
+                                    }
+                                });
+                            }
+                        });
+
                         row.addView(list);
                         container.post(new Runnable() {
                             @Override
@@ -93,15 +123,24 @@ public class Main extends AppCompatActivity {
     }
 
     public void buscar(View view) {
-        String title = et.getText().toString().trim();
-        et.setText("");
-        if(!title.isEmpty()) {
-            crearLista(select_query.concat(" where titulo = '").concat(title).concat("'"));
-        }
+        et.addTextChangedListener(new TextWatcher(){
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                crearLista(select_query.concat(" where titulo like '").concat(s.toString()).concat("%'"));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
     }
 
     public void verPerfil(View view) {
-        db.close();
         Intent i = new Intent(this, Perfil_Usuario.class);
         i.putExtra(Login.EXTRA_MESSAGE, getIntent().getStringExtra(Login.EXTRA_MESSAGE));
         startActivity(i);
@@ -113,6 +152,7 @@ public class Main extends AppCompatActivity {
     }
 
     public void inicio(View view) {
+        db.close();
         Intent i = new Intent(this, Login.class );
         startActivity(i);
         finish();

@@ -16,15 +16,17 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table categoria(id integer primary key autoincrement, descripcion text)");
         db.execSQL("insert into categoria(id, descripcion) values (null, 'Ficción')");
-
-        //db.execSQL("create table categoria(id integer primary key autoincrement, descripcion text)");
         db.execSQL("insert into categoria(id, descripcion) values (null, 'Terror')");
+        db.execSQL("insert into categoria(id, descripcion) values (null, 'Aventura')");
+        db.execSQL("insert into categoria(id, descripcion) values (null, 'Cómic')");
 
         db.execSQL("create table userdata(codigo varchar(3) not null primary key, username text unique not null, password text not null," +
                 "name text not null, apellidos text not null, correo text not null, celular varchar(10), " +
                 "favcategoria integer not null, foreign key (favcategoria) references categoria(id))");
         db.execSQL("insert into userdata values ('001', 'admin', 'admin', 'Guillermo', 'Castillo'," +
-                "'guancast@gmail.com','0999981247', 1)");
+                "'guancast@gmail.com','0999981247', 4)");
+        db.execSQL("insert into userdata values ('008', 'g', 'a', 'Gustavo', 'Alvarado'," +
+                "'gualalva@gmail.com','0970921450', 1)");
 
         db.execSQL("create table libro(isbn varchar(4) unique not null primary key," +
                 "titulo text not null, autor text not null, publicacion varchar(4)," +
@@ -43,11 +45,6 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "'Sinsajo es una novela de ciencia ficción distópica para jóvenes adultos de 2010 y el tercer libro de la trilogía de Los juegos del hambre, de la autora Suzanne Collins. Después de destruir los juegos para siempre, Katniss llega al Distrito 13 para salvar a Peeta y una nación conmovida por su coraje.'," +
                 "'juegos_del_hambre', 1)");
 
-
-        /*db.execSQL("create table libro(isbn varchar(4) unique not null primary key," +
-                "titulo text not null, autor text not null, publicacion varchar(4)," +
-                "descripcion text not null, imgsrc text not null," +
-                "idcategoria integer not null, foreign key (idcategoria) references categoria(id))");*/
         db.execSQL("insert into libro values ('0005', 'IT', 'Stephen King','1986'," +
                 "'Cuenta la historia de un grupo de siete niños que son aterrorizados por un malvado monstruo -al que llaman «Eso»- que es capaz de cambiar de forma, alimentándose del terror que produce en sus víctimas.'," +
                 "'it_image', 2)");

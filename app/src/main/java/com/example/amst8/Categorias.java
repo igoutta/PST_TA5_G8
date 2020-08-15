@@ -54,7 +54,7 @@ public class Categorias extends AppCompatActivity  {
 
                         Button btn = new Button(getApplicationContext());
                         btn.setBackground(getResources().getDrawable(R.drawable.button_style));
-                        btn.setText(fila.getString(1)+value);
+                        btn.setText(fila.getString(1));
                         item.addView(btn);
 
                         container.post(new Runnable() {
@@ -67,6 +67,7 @@ public class Categorias extends AppCompatActivity  {
                                     public void onClick(final View v) {
                                         db.close();
                                         Intent i = new Intent(getApplicationContext(), Main.class);
+                                        i.putExtra(Login.EXTRA_MESSAGE, getIntent().getStringExtra(Login.EXTRA_MESSAGE));
                                         i.putExtra(EXTRA_MESSAGE, value);
                                         startActivity(i);
                                         finish();

@@ -26,6 +26,8 @@ import android.widget.Toast;
 public class Main extends AppCompatActivity {
     private LinearLayout container;
     private EditText et;
+    private View showdescLayout;
+    private AlertDialog showDesc;
     private SQLiteDatabase db;
     private String select_query = "select * from libro";
 
@@ -35,6 +37,9 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         et = findViewById(R.id.et);
         container = findViewById(R.id.containerBooks);
+        showdescLayout = LayoutInflater.from(this).inflate(R.layout.custom_desc, null);
+        showDesc = new AlertDialog.Builder(this).create();
+        showDesc.setView(showdescLayout);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bookstore", null, 1);
         db = admin.getReadableDatabase();
@@ -47,7 +52,6 @@ public class Main extends AppCompatActivity {
 
         crearLista(inicial);
         buscar();
-        //crearDialog();
     }
 
     public void crearLista(final String query) {
@@ -89,7 +93,7 @@ public class Main extends AppCompatActivity {
                         }
                         row.addView(list);
 
-                        final String desc = fila.getString(4);
+                        final String desc = fila.getString(1).concat("\n").concat(fila.getString(4));
                         container.post(new Runnable() {
                                            @Override
                                            public void run() {
@@ -98,6 +102,7 @@ public class Main extends AppCompatActivity {
 
                                                    @Override
                                                    public void onClick(final View v) {
+                                                       mostrarDesc(desc);
                                                    }
                                                });
                                            }
@@ -130,14 +135,13 @@ public class Main extends AppCompatActivity {
         });
     }
 
-    public void crearDialog() {
-        View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_desc, null);
-        AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext(),R.style.Theme_AppCompat_NoActionBar).create();
-        alertDialog.setView(dialogView);
-
-        TextView text = dialogView.findViewById(R.id.text_dialog);
-        text.setText("Inicio");
-        alertDialog.show();
+    public void mostrarDesc(String data) {
+        String[] args = data.split("\n");
+        TextView title =  showdescLayout.findViewById(R.id.text_title);
+        title.setText(args[0]);
+        TextView desc = showdescLayout.findViewById(R.id.text_dialog);
+        desc.setText(args[1]);
+        showDesc.show();
     }
 
     public void verPerfil(View view) {

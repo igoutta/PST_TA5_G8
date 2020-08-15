@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Perfil_Usuario extends AppCompatActivity {
     private TextView tvname, tvapellido, tvcorreo, tvcelular, tvfavorito;
@@ -43,5 +45,28 @@ public class Perfil_Usuario extends AppCompatActivity {
             fila.close();
         }
         db.close();
+    }
+
+    public void salir(View view) {
+        Intent i = new Intent(this, Login.class );
+        startActivity(i);
+        finish();
+    }
+
+    public void inicio(View view) {
+        Intent i = new Intent(this, Main.class );
+        startActivity(i);
+        finish();
+    }
+
+    public void verCategorias(View v) {
+        Intent i = new Intent(this, Categorias.class);
+        startActivity(i);
+        finish();
+    }
+
+    public void verPerfil(View view) {
+        Toast toast = Toast.makeText(this, "Se encuentra en la sección perfil", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

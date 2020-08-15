@@ -26,7 +26,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="304dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -136,7 +136,7 @@
 
                 <TextView
                     android:id="@+id/tvfavorito"
-                    android:layout_width="43dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Favorito:"
@@ -152,7 +152,68 @@
                     android:textAlignment="center"
                     android:textSize="24sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="salir"
+                android:text="Salir de la Sesión"
+                android:textAlignment="center"
+                android:textColor="#03A9F4"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
         </LinearLayout>
+
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/vacio"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/ibCategory"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="verCategorias"
+            app:srcCompat="@mipmap/boton_categoria" />
+
+        <ImageButton
+            android:id="@+id/ibHome"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="inicio"
+            app:srcCompat="@mipmap/boton_home" />
+
+        <ImageButton
+            android:id="@+id/ibCat"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="verPerfil"
+            app:srcCompat="@mipmap/perfil" />
+
+    </LinearLayout>
 
 </LinearLayout>

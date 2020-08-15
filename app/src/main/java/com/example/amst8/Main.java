@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main extends AppCompatActivity {
     private LinearLayout container;
@@ -38,16 +39,18 @@ public class Main extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "bookstore", null, 1);
         db = admin.getReadableDatabase();
 
+        String inicial = select_query;
         Intent cond = getIntent();
         if(cond.hasExtra(Categorias.EXTRA_MESSAGE)) {
-            select_query.concat(" where idcategoria = ").concat(cond.getStringExtra(Categorias.EXTRA_MESSAGE));
+            inicial = select_query.concat(" where idcategoria = ").concat(cond.getStringExtra(Categorias.EXTRA_MESSAGE));
         }
-        buscar(et);
-        crearLista(select_query);
+
+        crearLista(inicial);
+        buscar();
+        crearDialog();
     }
 
     public void crearLista(final String query) {
-        container.removeAllViewsInLayout();
         new Thread(new Runnable(){
 
             @Override
@@ -65,6 +68,7 @@ public class Main extends AppCompatActivity {
                         toShow.setImageResource(getResources().getIdentifier(src,"mipmap",getPackageName()));
                         toShow.setMinimumHeight(168);
                         toShow.setMaxHeight(168);
+                        toShow.setAdjustViewBounds(true);
                         toShow.setPadding(8,8,8,8);
                         row.addView(toShow);
 
@@ -83,36 +87,21 @@ public class Main extends AppCompatActivity {
                             l.setText(args[x-1].concat(data));
                             list.addView(l);
                         }
+                        row.addView(list);
 
                         final String desc = fila.getString(4);
-                        row.post(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                row.setOnClickListener(new View.OnClickListener() {
-
-                                    @Override
-                                    public void onClick(final View v) {
-                                        View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_desc, null);
-                                        AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext(),R.style.Theme_AppCompat_NoActionBar).create();
-                                        alertDialog.setView(dialogView);
-
-                                        TextView text = dialogView.findViewById(R.id.text_dialog);
-                                        text.setText(desc);
-
-                                        alertDialog.show();
-                                    }
-                                });
-                            }
-                        });
-
-                        row.addView(list);
                         container.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                container.addView(row);
-                            }
-                        }
+                                           @Override
+                                           public void run() {
+                                               container.addView(row);
+                                               row.setOnClickListener(new View.OnClickListener() {
+
+                                                   @Override
+                                                   public void onClick(final View v) {
+                                                   }
+                                               });
+                                           }
+                                       }
 
                         );
                     }while (fila.moveToNext());
@@ -122,7 +111,7 @@ public class Main extends AppCompatActivity {
         }).start();
     }
 
-    public void buscar(View view) {
+    public void buscar() {
         et.addTextChangedListener(new TextWatcher(){
 
             @Override
@@ -131,6 +120,7 @@ public class Main extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                container.removeAllViews();
                 crearLista(select_query.concat(" where titulo like '").concat(s.toString()).concat("%'"));
             }
 
@@ -138,6 +128,16 @@ public class Main extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
             }
         });
+    }
+
+    public void crearDialog() {
+        View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_desc, null);
+        AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext(),R.style.Theme_AppCompat_NoActionBar).create();
+        alertDialog.setView(dialogView);
+
+        TextView text = dialogView.findViewById(R.id.text_dialog);
+        text.setText("Inicio");
+        alertDialog.show();
     }
 
     public void verPerfil(View view) {
@@ -152,9 +152,6 @@ public class Main extends AppCompatActivity {
     }
 
     public void inicio(View view) {
-        db.close();
-        Intent i = new Intent(this, Login.class );
-        startActivity(i);
-        finish();
+        Toast.makeText(this, "Se encuentra en la sección principal", Toast.LENGTH_SHORT).show();
     }
 }

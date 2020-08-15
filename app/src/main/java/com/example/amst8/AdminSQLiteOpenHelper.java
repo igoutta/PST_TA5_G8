@@ -14,11 +14,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table categoria(id integer primary key, descripcion text)");
-        db.execSQL("insert into categoria(id, descripcion) values (1, 'Ficción')");
-        db.execSQL("insert into categoria(id, descripcion) values (2, 'Terror')");
-        db.execSQL("insert into categoria(id, descripcion) values (3, 'Aventura')");
-        db.execSQL("insert into categoria(id, descripcion) values (4, 'Cómic')");
+        db.execSQL("create table categoria(id integer primary key autoincrement, descripcion text not null, imgsrc text not null)");
+        db.execSQL("insert into categoria values (null, 'Ficción','ficcion')");
+        db.execSQL("insert into categoria values (null, 'Terror','terror')");
+        db.execSQL("insert into categoria values (null, 'Aventura','aventura')");
+        db.execSQL("insert into categoria values (null, 'Cómic','comics')");
 
         db.execSQL("create table userdata(codigo varchar(3) not null primary key, username text unique not null, password text not null," +
                 "name text not null, apellidos text not null, correo text not null, celular varchar(10), " +
@@ -33,7 +33,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "descripcion text not null, imgsrc text not null," +
                 "idcategoria integer not null, foreign key (idcategoria) references categoria(id))");
         db.execSQL("insert into libro values ('0001', 'Los Juegos de Ender', 'Orson Scott Card','1985'," +
-                "'Aqui va la descripcion'," +
+                "'Un extraordinario chico superdotado de 12 años recibe la preparación necesaria para convertirse en el líder militar definitivo de las fuerzas armadas de la Tierra, usando tácticas de juegos que se transforman en estrategias bélicas con el fin del aniquilar a la invasión alíenigena que ya nos amenazó una vez.'," +
                 "'juego_de_ender', 1)");
         db.execSQL("insert into libro values ('0002', 'Harry Potter y la Orden del Fénix', 'J.K. Rowling','2003'," +
                 "'En su quinto año en Hogwarts, Harry descubre que muchos integrantes de la comunidad de magos no conocen la verdad acerca de su encuentro con Lord Voldemort. Cornelius Fudge, ministro de magia, designa a Dolores Umbridge como maestra de defensa contra de las artes oscuras porque cree que el profesor Dumbledore planea apoderarse de su trabajo. Pero sus enseñanzas son inadecuadas, por lo que Harry prepara a los estudiantes para defender la escuela en contra del mal.'," +

@@ -40,7 +40,7 @@
 
                 <TextView
                     android:id="@+id/tvname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Nombres:"
@@ -63,7 +63,7 @@
 
                 <TextView
                     android:id="@+id/tvapellido"
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Apellidos:"
@@ -86,7 +86,7 @@
 
                 <TextView
                     android:id="@+id/tvcorreo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="28dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Correo:"
@@ -109,7 +109,7 @@
 
                 <TextView
                     android:id="@+id/tvcelular"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Celular:"
@@ -132,7 +132,7 @@
 
                 <TextView
                     android:id="@+id/tvfavorito"
-                    android:layout_width="wrap_content"
+                    android:layout_width="43dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Favorito:"

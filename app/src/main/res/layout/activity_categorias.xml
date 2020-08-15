@@ -58,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="ficcionbtn"
                     android:text="Ficcion"
                     android:textAlignment="center"
                     android:textColor="#03A9F4"
@@ -86,6 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="terrorbtn"
                     android:text="Terror"
                     android:textAlignment="center"
                     android:textColor="#03A9F4"
@@ -112,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="aventurabtn"
                     android:text="Aventura"
                     android:textColor="#03A9F4"
                     android:textSize="18sp" />
@@ -135,6 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_weight="1"
+                    android:onClick="terrorbtn"
                     android:text="Comics"
                     android:textAlignment="center"
                     android:textColor="#03A9F4"
@@ -151,23 +155,23 @@
     <LinearLayout
         android:id="@+id/ESPACIO1"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
+        android:layout_height="170dp"
         android:orientation="horizontal" />
 
     <LinearLayout
         android:id="@+id/botones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="91dp"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/ibProfile"
+            android:id="@+id/ibCat"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:onClick="categoria"
             android:scaleType="center"
-            app:srcCompat="@mipmap/perfil" />
-
+            app:srcCompat="@mipmap/boton_categoria" />
         <ImageButton
             android:id="@+id/ibHome"
             android:layout_width="100dp"
@@ -178,13 +182,12 @@
             app:srcCompat="@mipmap/boton_home" />
 
         <ImageButton
-            android:id="@+id/ibCat"
+            android:id="@+id/ibProfile"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:onClick="categoria"
             android:scaleType="center"
-            app:srcCompat="@mipmap/boton_categoria" />
+            app:srcCompat="@mipmap/perfil" />
 
     </LinearLayout>
 

@@ -15,7 +15,8 @@ public class Categorias extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
-
+        Toast toast = Toast.makeText(this, "Se encuentra en la sección categoría", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     public void inicio(View view) {
@@ -27,6 +28,34 @@ public class Categorias extends AppCompatActivity  {
     public void categoria(View v) {
         Toast toast = Toast.makeText(this, "Se encuentra en la sección categoría", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void ficcionbtn(View view) {
+        Intent i = new Intent(this, X_Categ.class );
+        i.putExtra("CATEG",1);
+        startActivity(i);
+        finish();
+    }
+
+    public void terrorbtn(View view) {
+        Intent i = new Intent(this, X_Categ.class );
+        i.putExtra("CATEG",2);
+        startActivity(i);
+        finish();
+    }
+
+    public void aventurabtn(View view) {
+        Intent i = new Intent(this, X_Categ.class );
+        i.putExtra("CATEG",3);
+        startActivity(i);
+        finish();
+    }
+
+    public void comicbtn(View view) {
+        Intent i = new Intent(this, X_Categ.class );
+        i.putExtra("CATEG",4);
+        startActivity(i);
+        finish();
     }
 
     //falta funcion ver perfil del menú

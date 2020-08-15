@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".X_Categ">
+
+    <TextView
+        android:id="@+id/textViewCateg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Categoria"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="549dp"
+        app:layout_constraintBottom_toTopOf="@+id/botones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/containerBooks"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibCat"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="categoria"
+            android:scaleType="center"
+            app:srcCompat="@mipmap/boton_categoria" />
+        <ImageButton
+            android:id="@+id/ibHome"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="inicio"
+            android:scaleType="center"
+            app:srcCompat="@mipmap/boton_home" />
+
+        <ImageButton
+            android:id="@+id/ibProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:scaleType="center"
+            app:srcCompat="@mipmap/perfil" />
+
+    </LinearLayout>
+
+</LinearLayout>

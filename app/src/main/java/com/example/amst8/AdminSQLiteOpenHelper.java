@@ -14,11 +14,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table categoria(id integer primary key autoincrement, descripcion text)");
-        db.execSQL("insert into categoria(id, descripcion) values (null, 'Ficción')");
-        db.execSQL("insert into categoria(id, descripcion) values (null, 'Terror')");
-        db.execSQL("insert into categoria(id, descripcion) values (null, 'Aventura')");
-        db.execSQL("insert into categoria(id, descripcion) values (null, 'Cómic')");
+        db.execSQL("create table categoria(id integer primary key, descripcion text)");
+        db.execSQL("insert into categoria(id, descripcion) values (1, 'Ficción')");
+        db.execSQL("insert into categoria(id, descripcion) values (2, 'Terror')");
+        db.execSQL("insert into categoria(id, descripcion) values (3, 'Aventura')");
+        db.execSQL("insert into categoria(id, descripcion) values (4, 'Cómic')");
 
         db.execSQL("create table userdata(codigo varchar(3) not null primary key, username text unique not null, password text not null," +
                 "name text not null, apellidos text not null, correo text not null, celular varchar(10), " +

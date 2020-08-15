@@ -87,9 +87,15 @@ public class Categorias extends AppCompatActivity  {
         finish();
     }
 
-    public void categoria(View v) {
+    public void verCategorias(View v) {
         Toast toast = Toast.makeText(this, "Se encuentra en la sección categoría", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void verPerfil(View view) {
+        Intent i = new Intent(this, Perfil_Usuario.class);
+        i.putExtra(Login.EXTRA_MESSAGE, getIntent().getStringExtra(Login.EXTRA_MESSAGE));
+        startActivity(i);
     }
 
 }

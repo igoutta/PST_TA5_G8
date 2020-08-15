@@ -47,7 +47,7 @@ public class Main extends AppCompatActivity {
 
         crearLista(inicial);
         buscar();
-        crearDialog();
+        //crearDialog();
     }
 
     public void crearLista(final String query) {

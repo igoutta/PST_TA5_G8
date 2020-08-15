@@ -55,12 +55,18 @@ public class Perfil_Usuario extends AppCompatActivity {
 
     public void inicio(View view) {
         Intent i = new Intent(this, Main.class );
+        Bundle datos = this.getIntent().getExtras();
+        String msg1 = datos.getString(Login.EXTRA_MESSAGE);
+        i.putExtra(Login.EXTRA_MESSAGE, msg1);
         startActivity(i);
         finish();
     }
 
     public void verCategorias(View v) {
         Intent i = new Intent(this, Categorias.class);
+        Bundle datos = this.getIntent().getExtras();
+        String msg1 = datos.getString(Login.EXTRA_MESSAGE);
+        i.putExtra(Login.EXTRA_MESSAGE, msg1);
         startActivity(i);
         finish();
     }

@@ -83,6 +83,9 @@ public class Categorias extends AppCompatActivity  {
 
     public void inicio(View view) {
         Intent i = new Intent(this, Main.class );
+        Bundle datos = this.getIntent().getExtras();
+        String msg1 = datos.getString(Login.EXTRA_MESSAGE);
+        i.putExtra(Login.EXTRA_MESSAGE, msg1);
         startActivity(i);
         finish();
     }

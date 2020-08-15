@@ -142,12 +142,18 @@ public class Main extends AppCompatActivity {
 
     public void verPerfil(View view) {
         Intent i = new Intent(this, Perfil_Usuario.class);
-        i.putExtra(Login.EXTRA_MESSAGE, getIntent().getStringExtra(Login.EXTRA_MESSAGE));
+        Bundle datos = this.getIntent().getExtras();
+        String msg1 = datos.getString(Login.EXTRA_MESSAGE);
+        i.putExtra(Login.EXTRA_MESSAGE, msg1);
+        //i.putExtra(Login.EXTRA_MESSAGE, getIntent().getStringExtra(Login.EXTRA_MESSAGE));
         startActivity(i);
     }
 
     public void verCategorias(View view) {
         Intent i = new Intent(this, Categorias.class );
+        Bundle datos = this.getIntent().getExtras();
+        String msg1 = datos.getString(Login.EXTRA_MESSAGE);
+        i.putExtra(Login.EXTRA_MESSAGE, msg1);
         startActivity(i);
     }
 

@@ -27,6 +27,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "'guancast@gmail.com','0999981247', 4)");
         db.execSQL("insert into userdata values ('008', 'g', 'a', 'Gustavo', 'Alvarado'," +
                 "'gualalva@gmail.com','0970921450', 1)");
+        db.execSQL("insert into userdata values ('002', 'pvibarra', 'pvibarra', 'Pedro', 'Ibarra'," +
+                "'pvibarra@gmail.com','0987654321', 3)");
 
         db.execSQL("create table libro(isbn varchar(4) unique not null primary key," +
                 "titulo text not null, autor text not null, publicacion varchar(4)," +

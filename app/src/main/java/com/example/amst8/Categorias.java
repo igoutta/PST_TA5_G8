@@ -39,24 +39,24 @@ public class Categorias extends AppCompatActivity  {
                 if (fila.moveToFirst()) {
                     do {
                         final LinearLayout item = new LinearLayout(getApplicationContext());
+                        item.setPadding(8,8,8,8);
                         item.setOrientation(LinearLayout.VERTICAL);
                         item.setGravity(Gravity.CENTER_VERTICAL);
 
                         ImageView toShow = new ImageView(getApplicationContext());
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(250,250);
+                        toShow.setLayoutParams(lp);
+                        //toShow.setBackground(R.drawable.bg_color);
                         String src = fila.getString(2);
                         toShow.setImageResource(getResources().getIdentifier(src,"mipmap",getPackageName()));
-                        toShow.setMinimumHeight(168);
-                        toShow.setMaxHeight(168);
-                        toShow.setAdjustViewBounds(true);
-                        toShow.setPadding(8,8,8,8);
                         item.addView(toShow);
-                        final String value = Integer.toString(fila.getInt(0));
 
                         Button btn = new Button(getApplicationContext());
                         btn.setBackground(getResources().getDrawable(R.drawable.button_style));
                         btn.setText(fila.getString(1));
                         item.addView(btn);
 
+                        final String value = Integer.toString(fila.getInt(0));
                         container.post(new Runnable() {
                             @Override
                             public void run() {

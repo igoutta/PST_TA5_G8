@@ -68,12 +68,11 @@ public class Main extends AppCompatActivity {
                         row.setGravity(Gravity.CENTER_VERTICAL);
 
                         ImageView toShow = new ImageView(getApplicationContext());
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(168,168);
+                        toShow.setLayoutParams(lp);
+                        toShow.setPadding(8,8,8,8);
                         String src = fila.getString(5);
                         toShow.setImageResource(getResources().getIdentifier(src,"mipmap",getPackageName()));
-                        toShow.setMinimumHeight(168);
-                        toShow.setMaxHeight(168);
-                        toShow.setAdjustViewBounds(true);
-                        toShow.setPadding(8,8,8,8);
                         row.addView(toShow);
 
                         LinearLayout list = new LinearLayout(getApplicationContext());

@@ -44,7 +44,7 @@ public class Categorias extends AppCompatActivity  {
                         item.setGravity(Gravity.CENTER_VERTICAL);
 
                         ImageView toShow = new ImageView(getApplicationContext());
-                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(250,250);
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(256,256);
                         toShow.setLayoutParams(lp);
                         //toShow.setBackground(R.drawable.bg_color);
                         String src = fila.getString(2);

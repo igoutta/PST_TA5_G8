@@ -10,7 +10,7 @@
         android:layout_height="120dp"
         android:id="@+id/a"
         android:gravity="center"
-        android:background="#DA5F6A"
+        android:background="@color/colorPrimary"
         android:src="@drawable/icon"
         android:scaleType="fitCenter" />
 

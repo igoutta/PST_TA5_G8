@@ -82,7 +82,7 @@ public class Main extends AppCompatActivity {
                         for (int x = 1; x<4; x++) {
                             TextView l = new TextView(getApplicationContext());
                             l.setTextSize(16);
-                            l.setTextColor(Color.GRAY);
+                            l.setTextColor(Color.LTGRAY);
                             String data = fila.getString(x);
                             if(fila.getString(x).isEmpty()){
                                 data = "Desconocido";

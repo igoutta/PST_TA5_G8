@@ -49,8 +49,8 @@ public class Perfil_Usuario extends AppCompatActivity {
 
     public void salir(View view) {
         Intent i = new Intent(this, Login.class );
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-        finish();
     }
 
     public void inicio(View view) {
